@@ -75,5 +75,7 @@ MIT Lisense
 ```
 
 ## 기타 정보
-배포 상태: 배포 완료  
-기술 스택: NextJS, Charts JS, Vercel KV(key-value Database)
+기술 스택: NextJS, Charts JS, Vercel KV(key-value Database)  
+배포 상태: 초기화면 배포 완료  
+배포 주소: https://info-grab-survey-next-js.vercel.app     
+
