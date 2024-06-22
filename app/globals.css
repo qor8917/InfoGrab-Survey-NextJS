@@ -2,32 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+/* 기본설정 */
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    @apply h-full box-border mx-4 lg:mx-5;
+  }
+
+  .dark {
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* CSS 변수를 사용한 선언 */
+@layer base {
+  :root {
+  }
+
+  .dark {
+  }
 }
 
+/* 사용자 정의 css 유틸리티 레이어보다 보다 컴포넌트 할 수있는것들 정의 button, card */
+@layer components {
+}
+/* 사용자 정의 css 컴포넌트 레이어보다는 세분화 할수 있는 것들 정의  color, margin, padding*/
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .mainGradient {
+    background: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(14, 174, 87, 1) 0%,
+      rgba(12, 116, 117, 1) 90%
+    );
   }
 }
