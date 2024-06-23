@@ -1,5 +1,4 @@
-import { InitialForm } from "@/components/intialForm";
-import { Suspense } from "react";
+import { InitialForm } from "@/components/intial-form";
 
 export default function Home() {
   return (
@@ -9,10 +8,13 @@ export default function Home() {
           🐣 대한민국 합계 출산율 0.6 들어보셨나요?
         </h1>
         <p className="text-lg">
-          요즘 대두 되고 있는 출산율에 대한 인식을 남녀 그리고 연령대로 나누어
-          설문조사 후 결과를 알아 볼까요?
+          요즘 대두 되고 있는 출산율에 대한 인식을 알아보고
+          <br />
+          남녀 그리고 연령별 생각의 차이를 알아 볼까요?
         </p>
-        <InitialForm />
+        <div>
+          <InitialForm />
+        </div>
       </div>
     </main>
   );
