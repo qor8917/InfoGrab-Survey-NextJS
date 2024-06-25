@@ -148,6 +148,7 @@ export function InitialForm() {
                         <SelectItem
                           className="data-[highlighted]:mainGradient data-[highlighted]:text-white"
                           value={la}
+                          key={la}
                         >
                           {la}
                         </SelectItem>
