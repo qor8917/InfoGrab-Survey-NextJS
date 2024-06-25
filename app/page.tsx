@@ -1,5 +1,5 @@
 import { InitialForm } from "@/components/intial-form";
-
+import { Suspense } from "react";
 export default function Home() {
   return (
     <main className="h-full flex justify-center items-center">
@@ -13,7 +13,9 @@ export default function Home() {
           남녀 그리고 연령별 생각의 차이를 알아 볼까요?
         </p>
         <div>
-          <InitialForm />
+          <Suspense>
+            <InitialForm />
+          </Suspense>
         </div>
       </div>
     </main>
