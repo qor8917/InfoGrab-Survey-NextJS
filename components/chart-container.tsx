@@ -52,7 +52,7 @@ export function ChartContainer({ surveyData, type }: any) {
         {labels.map((age) => {
           if (type === "stack") return;
           return (
-            <TabsTrigger className="shadow" value={age}>
+            <TabsTrigger className="shadow" value={age} key={age}>
               {age}
             </TabsTrigger>
           );
