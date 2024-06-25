@@ -30,6 +30,16 @@ const formSchema = z.object({
 });
 
 export function InitialForm() {
+  const labels = [
+    "10대",
+    "20대",
+    "30대",
+    "40대",
+    "50대",
+    "60대",
+    "70대",
+    "80대",
+  ];
   const [isCorrectAnswer, SetIsCorrectAnswer] = useState<boolean | null>(null);
 
   const router = useRouter();
@@ -47,8 +57,8 @@ export function InitialForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      sex: "woman",
-      age: "adult",
+      sex: "F",
+      age: "20대",
       name: "",
     },
   });
@@ -100,13 +110,13 @@ export function InitialForm() {
                     <SelectGroup>
                       <SelectItem
                         className="data-[highlighted]:mainGradient data-[highlighted]:text-white"
-                        value="man"
+                        value="M"
                       >
                         남자
                       </SelectItem>
                       <SelectItem
                         className="data-[highlighted]:mainGradient data-[highlighted]:text-white"
-                        value="woman"
+                        value="F"
                       >
                         여자
                       </SelectItem>
@@ -134,24 +144,14 @@ export function InitialForm() {
                   </SelectTrigger>
                   <SelectContent className="bg-white rounded">
                     <SelectGroup>
-                      <SelectItem
-                        className="data-[highlighted]:mainGradient data-[highlighted]:text-white"
-                        value="teenager"
-                      >
-                        10대
-                      </SelectItem>
-                      <SelectItem
-                        className="data-[highlighted]:mainGradient data-[highlighted]:text-white"
-                        value="adult"
-                      >
-                        20대~40대
-                      </SelectItem>
-                      <SelectItem
-                        className="data-[highlighted]:mainGradient data-[highlighted]:text-white"
-                        value="senior"
-                      >
-                        50대 이상
-                      </SelectItem>
+                      {labels.map((la) => (
+                        <SelectItem
+                          className="data-[highlighted]:mainGradient data-[highlighted]:text-white"
+                          value={la}
+                        >
+                          {la}
+                        </SelectItem>
+                      ))}
                     </SelectGroup>
                   </SelectContent>
                 </Select>

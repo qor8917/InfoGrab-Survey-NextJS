@@ -48,12 +48,10 @@ export default function MultipleChoice() {
                 router.push(
                   pathname +
                     "?" +
-                    createQueryString(`q3-${name}`, value.toString())
+                    createQueryString(`q3${name}`, value ? "1" : "0")
                 );
               }}
-              checked={
-                searchParams.get(`q3-${name}`) === "true" ? true : undefined
-              }
+              checked={searchParams.get(`q3${name}`) === "1" ? true : undefined}
             />
             <label
               htmlFor={name}
