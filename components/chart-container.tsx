@@ -11,27 +11,43 @@ export function ChartContainer({ surveyData, type }: any) {
       {labels.map((age) => {
         if (type === "stack") {
           return (
-            <TabsContent className="w-full h-[250px]" value={age} key={age}>
+            <TabsContent
+              className="w-full desktop:h-[250px]"
+              value={age}
+              key={age}
+            >
               <StackChart surveyData={surveyData} />
             </TabsContent>
           );
         }
         if (type === "avg") {
           return (
-            <TabsContent className="w-full  h-[250px]" value={age} key={age}>
+            <TabsContent
+              className="w-full desktop:h-[250px]"
+              value={age}
+              key={age}
+            >
               <LineChart className="" surveyData={surveyData} gene={age} />
             </TabsContent>
           );
         }
         if (type === "radar") {
           return (
-            <TabsContent value={age} className="w-full h-[250px]" key={age}>
+            <TabsContent
+              value={age}
+              className="w-full desktop:h-[250px]"
+              key={age}
+            >
               <RadarChart surveyData={surveyData} gene={age} className="" />
             </TabsContent>
           );
         }
         return (
-          <TabsContent value={age} className="w-full h-[250px]" key={age}>
+          <TabsContent
+            value={age}
+            className="w-full desktop:h-[250px]"
+            key={age}
+          >
             <LineChartDeviation surveyData={surveyData} gene={age} />
           </TabsContent>
         );

@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "antialiased font-sans bg-[url('/7.png')] text-white bg-no-repeat bg-cover bg-center flex justify-center items-center",
+          "antialiased font-sans bg-[url('/7.png')] text-white bg-no-repeat bg-cover flex justify-center items-center h-full bg-fixed",
           mono.variable
         )}
       >

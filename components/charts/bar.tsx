@@ -28,7 +28,7 @@ const CHART_COLORS = [
   "rgb(153, 102, 255)",
   "rgb(201, 203, 207)",
 ];
-const labels = ["10대", "20대", "30대", "40대", "50대", "60대", "70대", "80대"];
+const labels = ["10대", "20대", "30대", "40대", "50대", "60대 이상"];
 const groupByAge = (array: any) => {
   const grouped = array.reduce((acc: any, person: any) => {
     const { age } = person;

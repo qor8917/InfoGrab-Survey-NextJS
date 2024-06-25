@@ -2,8 +2,8 @@ import { InitialForm } from "@/components/intial-form";
 import { Suspense } from "react";
 export default function Home() {
   return (
-    <main className="flex justify-center items-center glassMorphism rounded-xl">
-      <div className="flex flex-col gap-4 items-center p-10 w-[460px]">
+    <main className="flex justify-center items-center glassMorphism rounded-xl ">
+      <div className="flex flex-col gap-4 items-center p-10 min-w-[300px]">
         <h1 className="text-xl font-bold">
           🐣 대한민국 합계 출산율 0.6 들어보셨나요?
         </h1>

@@ -12,7 +12,7 @@ export default function Page({ params }: { params: { questions: string } }) {
   ];
   return (
     <div className="h-full flex justify-center items-center">
-      <div className="w-[460px] flex flex-col gap-8 p-10 glassMorphism rounded-xl">
+      <div className="min-w-[300px] flex flex-col gap-8 p-10 glassMorphism rounded-xl">
         <Suspense>
           <div>{pages[currentPage]}</div>
         </Suspense>
