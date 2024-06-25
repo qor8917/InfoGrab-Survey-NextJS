@@ -54,7 +54,7 @@ const LineChartDeviation = ({ surveyData, gene }: any) => {
     label: {
       display: true,
       backgroundColor: "rgba(53, 162, 235, 0.5)",
-      color: "black",
+      color: "white",
       content: (ctx: any) =>
         (
           average(ctx.chart.data.datasets[0].data) +
@@ -77,7 +77,7 @@ const LineChartDeviation = ({ surveyData, gene }: any) => {
     label: {
       display: true,
       backgroundColor: "rgba(53, 162, 235, 0.5)",
-      color: "black",
+      color: "white",
       content: (ctx: any) =>
         (
           average(ctx.chart.data.datasets[0].data) -
@@ -100,7 +100,7 @@ const LineChartDeviation = ({ surveyData, gene }: any) => {
     label: {
       display: true,
       backgroundColor: "rgba(255, 99, 132, 0.5)",
-      color: "black",
+      color: "white",
       content: (ctx: any) =>
         (
           average(ctx.chart.data.datasets[1].data) +
@@ -123,7 +123,7 @@ const LineChartDeviation = ({ surveyData, gene }: any) => {
     label: {
       display: true,
       backgroundColor: "rgba(255, 99, 132, 0.5)",
-      color: "black",
+      color: "white",
       content: (ctx: any) =>
         (
           average(ctx.chart.data.datasets[1].data) -
@@ -140,17 +140,26 @@ const LineChartDeviation = ({ surveyData, gene }: any) => {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
+
     scales: {
       y: {
-        grid: { display: false },
+        ticks: { color: "white" },
+        grid: { display: false, color: "white" },
         beginAtZero: true,
         max: (ctx: any) =>
           average(ctx.chart.data.datasets[1].data) +
           standardDeviation(ctx.chart.data.datasets[1].data) +
           5,
       },
+
+      x: { ticks: { color: "white" }, grid: {} },
     },
     plugins: {
+      legend: {
+        labels: {
+          color: "white",
+        },
+      },
       annotation: {
         annotations: {
           annotation1,
@@ -172,12 +181,14 @@ const LineChartDeviation = ({ surveyData, gene }: any) => {
         data: menData.map(({ sum }: { sum: number }) => sum),
         borderColor: "rgb(53, 162, 235)",
         backgroundColor: "rgba(53, 162, 235, 0.5)",
+        tension: 0.5,
       },
       {
         label: "여성",
         data: womenData.map(({ sum }: { sum: number }) => sum),
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
+        tension: 0.5,
       },
     ],
   };

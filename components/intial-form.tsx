@@ -20,7 +20,7 @@ import {
   SelectValue,
 } from "./ui/select";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { Input } from "./ui/input";
 
 const formSchema = z.object({
@@ -90,7 +90,7 @@ export function InitialForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 py-4 flex flex-col items-center"
+        className="space-y-4 flex flex-col items-center w-[300px]"
       >
         <FormField
           control={form.control}
@@ -103,11 +103,11 @@ export function InitialForm() {
                   onValueChange={field.onChange}
                   defaultValue={field.value}
                 >
-                  <SelectTrigger className="w-[180px]">
+                  <SelectTrigger className="w-[300px] rounded">
                     <SelectValue placeholder="성별을 선택 해주세요" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white rounded">
-                    <SelectGroup>
+                  <SelectContent className="rounded">
+                    <SelectGroup className="subGradient">
                       <SelectItem
                         className="data-[highlighted]:mainGradient data-[highlighted]:text-white"
                         value="M"
@@ -115,7 +115,7 @@ export function InitialForm() {
                         남자
                       </SelectItem>
                       <SelectItem
-                        className="data-[highlighted]:mainGradient data-[highlighted]:text-white"
+                        className="data-[highlighted]:bmainGradientdata-[highlighted]:text-white"
                         value="F"
                       >
                         여자
@@ -139,10 +139,10 @@ export function InitialForm() {
                   onValueChange={field.onChange}
                   defaultValue={field.value}
                 >
-                  <SelectTrigger className="w-[180px]">
+                  <SelectTrigger className="w-[300px] rounded">
                     <SelectValue placeholder="나이를 선택 해주세요" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white rounded">
+                  <SelectContent className="subGradient rounded">
                     <SelectGroup>
                       {labels.map((la) => (
                         <SelectItem
@@ -168,30 +168,30 @@ export function InitialForm() {
             <FormItem>
               <FormControl>
                 <div>
-                  <div className="relative">
+                  <div className="relative w-[300px] rounded mt-6">
                     <Input
                       type="text"
                       id="name"
                       aria-describedby="outlined_success_help"
-                      className="border-black-600 focus:border-black-600 text-gray-500 peer block w-[180px] appearance-none rounded-lg border-2 bg-transparent px-2.5 pb-4 pt-4 text-sm  focus:outline-none focus:ring-0  "
-                      placeholder="이름"
+                      className="border  bg-withe focus:border-black-600 text-black-600 peer block w-[300px] appearance-none rounded  bg-transparent px-2.5 pb-4 pt-4 text-sm  focus:outline-none focus:ring-0"
+                      placeholder=""
                       {...field}
                       onBlur={onBlur}
                     />
                     <label
                       htmlFor="outlined_success"
-                      className="text-black-600 absolute start-1 top-2 z-10 origin-[0] -translate-y-4 scale-75 transform bg-white px-2 text-sm leading-6 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4"
+                      className="text-black-600 bg-[rgba(7, 122, 97, 0.3)] absolute start-1 top-2 z-10 origin-[0] -translate-y-8 scale-75 transform bg-transparent px-2 text-sm leading-6 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:px-2 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4"
                     >
-                      <div className=" text-base text-opacity-90">
+                      <div className=" text-base text-opacity-90 ">
                         <span className="text-green-600">*</span>
-                        <span>이름</span>
+                        <span className="px-1">이름</span>
                       </div>
                     </label>
                   </div>
                   {isCorrectAnswer ? (
                     <p
                       id="outlined_success_help"
-                      className="text-xs p-2 text-green-600 w-[180px]"
+                      className="text-xs p-2 w-[300px]"
                     >
                       <span className="font-medium">✅</span> Checked the Answer
                     </p>
@@ -200,9 +200,9 @@ export function InitialForm() {
                       id="outlined_success_help"
                       className={`text-xs p-2 text-red-500 ${
                         isCorrectAnswer == null ? "invisible" : "visible"
-                      } w-[180px]`}
+                      } w-[300px]`}
                     >
-                      <span className="font-medium">❌</span>
+                      <span className="font-medium pr-2">❌</span>
                       Enter the Answer correctly
                     </p>
                   )}

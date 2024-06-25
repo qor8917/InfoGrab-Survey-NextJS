@@ -20,7 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("antialiased font-sans ", mono.variable)}>
+      <body
+        className={cn(
+          "antialiased font-sans bg-[url('/7.png')] text-white bg-no-repeat bg-cover bg-center flex justify-center items-center",
+          mono.variable
+        )}
+      >
         {children}
       </body>
     </html>

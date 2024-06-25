@@ -33,7 +33,7 @@ export default function SingleChoice() {
 
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="text-lg">- 출산율이 낮던 말던 나랑 상관 없다.</h2>
+      <h2 className="text-lg">- 출산율은 나와 상관 없다.</h2>
       <div className="flex flex-col gap-4">
         <RadioGroup
           onValueChange={handleInputChange}

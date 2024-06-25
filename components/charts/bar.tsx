@@ -66,12 +66,22 @@ const StackChart = ({ surveyData }: any) => {
         borderWidth: 2,
       },
     },
+
+    plugins: {
+      legend: {
+        labels: {
+          color: "white",
+        },
+      },
+    },
     scales: {
       x: {
         stacked: true,
+        ticks: { color: "white" },
       },
       y: {
         stacked: true,
+        ticks: { color: "white" },
       },
     },
   };

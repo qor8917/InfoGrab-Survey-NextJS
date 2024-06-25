@@ -40,9 +40,21 @@ const LineChart = ({ surveyData, gene }: any) => {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
-      y: { grid: { display: false }, beginAtZero: true },
+      y: {
+        ticks: { color: "white" },
+        grid: { display: false },
+        beginAtZero: true,
+      },
+      x: {
+        ticks: { color: "white" },
+      },
     },
     plugins: {
+      legend: {
+        labels: {
+          color: "white",
+        },
+      },
       annotation: {
         annotations: {
           annotation: {
@@ -53,7 +65,7 @@ const LineChart = ({ surveyData, gene }: any) => {
             label: {
               display: true,
               backgroundColor: "rgba(53, 162, 235, 0.5)",
-              color: "black",
+              color: "white",
               content: (ctx: any) =>
                 "Average: " +
                 average(ctx.chart.data.datasets[0].data).toFixed(2),
@@ -70,7 +82,7 @@ const LineChart = ({ surveyData, gene }: any) => {
             label: {
               display: true,
               backgroundColor: "rgba(255, 99, 132, 0.5)",
-              color: "black",
+              color: "white",
               content: (ctx: any) =>
                 "Average: " +
                 average(ctx.chart.data.datasets[1].data).toFixed(2),
@@ -94,12 +106,14 @@ const LineChart = ({ surveyData, gene }: any) => {
         data: menData.map(({ sum }: { sum: number }) => sum),
         borderColor: "rgb(53, 162, 235)",
         backgroundColor: "rgba(53, 162, 235, 0.5)",
+        tension: 0.5,
       },
       {
         label: "여성",
         data: womenData.map(({ sum }: { sum: number }) => sum),
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
+        tension: 0.5,
       },
     ],
   };

@@ -10,7 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Radar } from "react-chartjs-2";
-import { fators, getMenData, getwomenData } from "@/utils/chart";
+import { fators, getMenData, getwomenData, labels } from "@/utils/chart";
 
 ChartJS.register(
   RadialLinearScale,
@@ -70,6 +70,21 @@ export default function RadarChart({ surveyData, gene }: any) {
   const option = {
     responsive: true,
     maintainAspectRatio: false,
+    scales: {
+      r: {
+        ticks: { color: "white", backdropColor: "transparent" },
+        pointLabels: {
+          color: "white",
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        labels: {
+          color: "white",
+        },
+      },
+    },
   };
 
   return <Radar options={option} data={data} />;

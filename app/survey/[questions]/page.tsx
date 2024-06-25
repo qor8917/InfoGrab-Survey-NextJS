@@ -11,8 +11,8 @@ export default function Page({ params }: { params: { questions: string } }) {
     <MultipleChoice key="page1" />,
   ];
   return (
-    <div className="h-full flex justify-center items-center ">
-      <div className="w-[460px] flex flex-col gap-8">
+    <div className="h-full flex justify-center items-center">
+      <div className="w-[460px] flex flex-col gap-8 p-10 glassMorphism rounded-xl">
         <Suspense>
           <div>{pages[currentPage]}</div>
         </Suspense>

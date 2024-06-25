@@ -5,7 +5,7 @@
 /* 기본설정 */
 @layer base {
   :root {
-    @apply h-full box-border mx-4 desktop:mx-5;
+    @apply h-full box-border px-4 desktop:px-5;
   }
 
   .dark {
@@ -29,8 +29,19 @@
   .mainGradient {
     background: radial-gradient(
       circle farthest-corner at 10% 20%,
-      rgba(14, 174, 87, 1) 0%,
+      rgba(4, 75, 59, 0.3) 0%,
       rgba(12, 116, 117, 1) 90%
     );
+  }
+  .subGradient {
+    background: rgba(7, 122, 97, 0.8);
+  }
+  .glassMorphism {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(7, 122, 97, 0.3);
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-left: 1px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(7px);
   }
 }

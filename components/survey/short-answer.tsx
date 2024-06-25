@@ -37,7 +37,7 @@ export default function ShortAnswer() {
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-8">
       <div>
         <h2 className="text-lg">
           - 아이를 키우는 것이 개인의 행복에 부정적인 영향을 준다고
@@ -55,16 +55,17 @@ export default function ShortAnswer() {
             id="email"
             aria-describedby="outlined_success_help"
             className="border-black-600 focus:border-black-600 text-gray-500 peer block w-full appearance-none rounded-lg border-2 bg-transparent px-2.5 pb-4 pt-4 text-sm  focus:outline-none focus:ring-0  "
-            placeholder="5점"
+            placeholder=""
             onBlur={onBlur}
             defaultValue={searchParams.get("q2") ?? undefined}
           />
           <label
             htmlFor="outlined_success"
-            className="text-black-600 absolute start-1 top-2 z-10 origin-[0] -translate-y-4 scale-75 transform bg-white px-2 text-sm leading-6 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4"
+            className="text-black-600 bg-[rgba(7, 122, 97, 0.3)] absolute start-1 top-2 z-10 origin-[0] -translate-y-8 scale-75 transform bg-transparent px-2 text-sm leading-6 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:px-2 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4"
           >
-            <div className=" text-base text-opacity-90">
-              <span className="text-green-600">*</span> <span>점수</span>
+            <div className=" text-base text-opacity-90 ">
+              <span className="text-green-600">*</span>
+              <span className="px-1">점수</span>
             </div>
           </label>
         </div>
@@ -79,7 +80,7 @@ export default function ShortAnswer() {
               isCorrectAnswer == null ? "invisible" : "visible"
             }`}
           >
-            <span className="font-medium">❌</span>
+            <span className="font-medium pr-2">❌</span>
             Enter the Answer correctly
           </p>
         )}
