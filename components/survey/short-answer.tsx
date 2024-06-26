@@ -4,6 +4,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { Input } from "../ui/input";
 import { z } from "zod";
+import { Progress } from "../ui/progress";
 
 const regex = new RegExp(/\b([1-9]|10)\b/g);
 
@@ -39,6 +40,9 @@ export default function ShortAnswer() {
   return (
     <div className="flex flex-col gap-8">
       <div>
+        <Progress value={searchParams.size - 3} />
+      </div>
+      <div>
         <h2 className="text-lg">
           - 아이를 키우는 것이 개인의 행복에 부정적인 영향을 준다고
           생각하십니까?
@@ -54,7 +58,7 @@ export default function ShortAnswer() {
             type="text"
             id="email"
             aria-describedby="outlined_success_help"
-            className="border-black-600 focus:border-black-600 text-gray-500 peer block w-full appearance-none rounded-lg border-2 bg-transparent px-2.5 pb-4 pt-4 text-sm  focus:outline-none focus:ring-0  "
+            className="border-black-600 focus:border-black-600 text-white peer block w-full appearance-none rounded-lg border-2 bg-transparent px-2.5 pb-4 pt-4 text-sm  focus:outline-none focus:ring-0  "
             placeholder=""
             onBlur={onBlur}
             defaultValue={searchParams.get("q2") ?? undefined}
@@ -70,7 +74,7 @@ export default function ShortAnswer() {
           </label>
         </div>
         {isCorrectAnswer ? (
-          <p id="outlined_success_help" className="text-xs p-2 text-green-600 ">
+          <p id="outlined_success_help" className="text-xs p-2 ">
             <span className="font-medium">✅</span> Checked the Answer correctly
           </p>
         ) : (

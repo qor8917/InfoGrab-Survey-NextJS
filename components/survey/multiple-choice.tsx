@@ -3,6 +3,7 @@
 import { useCallback } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Checkbox } from "../ui/checkbox";
+import { Progress } from "../ui/progress";
 
 const answers = [
   {
@@ -36,6 +37,9 @@ export default function MultipleChoice() {
 
   return (
     <div className="flex flex-col gap-4">
+      <div>
+        <Progress value={searchParams.size - 3} />
+      </div>
       <h2 className="text-lg">
         - 출산이 힘들어 지는 주된 이유는? ( 다중선택 가능 )
       </h2>

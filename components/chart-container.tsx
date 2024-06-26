@@ -12,7 +12,7 @@ export function ChartContainer({ surveyData, type }: any) {
         if (type === "stack") {
           return (
             <TabsContent
-              className="w-full desktop:h-[250px]"
+              className="w-full h-[360px] desktop:h-[260px]"
               value={age}
               key={age}
             >
@@ -23,7 +23,7 @@ export function ChartContainer({ surveyData, type }: any) {
         if (type === "avg") {
           return (
             <TabsContent
-              className="w-full desktop:h-[250px]"
+              className="w-full h-[360px] desktop:h-[260px]"
               value={age}
               key={age}
             >
@@ -35,7 +35,7 @@ export function ChartContainer({ surveyData, type }: any) {
           return (
             <TabsContent
               value={age}
-              className="w-full desktop:h-[250px]"
+              className="w-full h-[360px] desktop:h-[260px]"
               key={age}
             >
               <RadarChart surveyData={surveyData} gene={age} className="" />
@@ -45,7 +45,7 @@ export function ChartContainer({ surveyData, type }: any) {
         return (
           <TabsContent
             value={age}
-            className="w-full desktop:h-[250px]"
+            className="w-full h-[360px] desktop:h-[260px]"
             key={age}
           >
             <LineChartDeviation surveyData={surveyData} gene={age} />

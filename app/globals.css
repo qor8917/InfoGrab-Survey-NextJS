@@ -5,7 +5,7 @@
 /* 기본설정 */
 @layer base {
   :root {
-    @apply h-full box-border px-4 desktop:px-5;
+    @apply box-border px-4 desktop:px-5;
   }
 
   .dark {

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { Label } from "../ui/label";
+import { Progress } from "../ui/progress";
 
 const answers = [
   { name: "a5", rating: 5, content: "매우 동의 한다." },
@@ -18,7 +19,7 @@ export default function SingleChoice() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-
+  console.log();
   const createQueryString = useCallback(
     (name: string, value: string) => {
       const params = new URLSearchParams(searchParams.toString());
@@ -33,6 +34,9 @@ export default function SingleChoice() {
 
   return (
     <div className="flex flex-col gap-4">
+      <div className={searchParams.size - 3 == 0 ? "invisible" : "visible"}>
+        <Progress value={searchParams.size - 3} />
+      </div>
       <h2 className="text-lg">- 출산율은 나와 상관 없다.</h2>
       <div className="flex flex-col gap-4">
         <RadioGroup

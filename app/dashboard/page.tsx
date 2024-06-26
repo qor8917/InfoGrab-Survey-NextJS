@@ -5,8 +5,8 @@ import StackChart from "@/components/charts/bar";
 export default async function Page() {
   const { data } = await getAllItems();
   return (
-    <div className="h-full flex justify-center items-center">
-      <div className="flex flex-col gap-4 h-full">
+    <div className="min-h-[100vh] flex justify-center items-center">
+      <div className="flex flex-col gap-4 min-h-[100vh]">
         <h1 className=" text-sm desktop:text-2xl font-bold glassMorphism rounded flex justify-center items-center py-4 mt-4">
           <span>결과 대시보드</span>
         </h1>
