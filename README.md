@@ -9,12 +9,13 @@
 - 다중 선택 5지선다 질문은 선택한 값의 합으로 측정합니다.
 - 전혀 동의하지 않음(1점)~전적으로 동의함(10점) 사이 점수를 입력하는 질문 유형도 있습니다.
 
-본 프로젝트는 NextJS 를 기반으로 작성되며, 데이터 통계를 위해 Vercel KV(key-value database)를 사용합니다.  
+본 프로젝트는 NextJS 를 기반으로 작성되며, 데이터 통계를 위해 supabase(postgreSQL)를 사용합니다.  
 그리고 데이터르 시작적으로 표현하기 위해 Charts JS 라이브러리를 사용하여 다음 세가지를 표현합니다
 
 - 출산에 대한 남녀, 그리고 연령별 인식 (점수 합계)
 - 출산에 대한 남녀, 그리고 연령별 인식 (평균)
 - 출산에 대한 남녀, 그리고 연령별 인식에 대한 표준편차
+- 출산에 가장 영향을 미치는 요인
 
 ## 📚 목차
 - [설치 방법](#-설치-방법)
@@ -75,7 +76,7 @@ MIT Lisense
 ```
 
 ## 기타 정보
-기술 스택: NextJS, Charts JS, Vercel KV(key-value Database)  
+기술 스택: NextJS, Charts JS, postgreSQL(supabase)
 배포 상태: 초기화면 배포 완료  
 배포 주소: https://info-grab-survey-next-js.vercel.app     
 
