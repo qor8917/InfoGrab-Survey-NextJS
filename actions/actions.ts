@@ -9,11 +9,13 @@ export async function addItem(payload: any) {
   const { sex, age, sum, name, q3a1, q3a2, q3a3, q3a4, q3a5 } = payload;
 
   try {
+    // const { data, status, statusText } = await supabase
+    //   .from("infograb")
+    //   .insert({ name, sex, age, sum, q3a1, q3a2, q3a3, q3a4, q3a5 })
+    //   .select();
     const { data, status, statusText } = await supabase
       .from("infograb")
-      .insert({ name, sex, age, sum, q3a1, q3a2, q3a3, q3a4, q3a5 })
       .select();
-
     return { status, message: statusText };
   } catch (error) {
     return { status, error: error };

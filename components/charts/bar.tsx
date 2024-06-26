@@ -90,14 +90,14 @@ const StackChart = ({ surveyData }: any) => {
     labels: labels,
     datasets: [
       {
-        label: `남자`,
+        label: `남성`,
         data: groupedMenPeople.map((value) => value),
         backgroundColor: "rgba(53, 162, 235, 0.5)",
         borderColor: "rgba(53, 162, 235, 0.5)",
         borderWidth: 2,
       },
       {
-        label: `여자`,
+        label: `여성`,
         data: groupedWomenPeople,
         backgroundColor: "rgba(255, 99, 132, 0.5)",
         borderColor: "rgba(255, 99, 132, 0.5)",
