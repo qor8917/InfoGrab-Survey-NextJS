@@ -23,7 +23,7 @@ export function SubmitForm({ payload }: { payload: any }) {
   const [isDrawer, setIsDrawer] = useState(false);
   const router = useRouter();
   useEffect(() => {
-    if (state.status === 200) {
+    if (state.status === 201) {
       setIsDrawer(true);
     } else {
       setIsDrawer(false);
